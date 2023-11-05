@@ -9,16 +9,18 @@ kWh-wealthy-consumer-data =
   load-table: komponent, energi 
     source: load-spreadsheet(ssid).sheet-by-name("kWh", true) 
   sanitize energi using string-sanitizer 
-#Gjør nummerene om til string slik at pyret skjønner hva som skal stå i tabellen // oppgave A
+      #Gjør numrene om til string slik at pyret skjønner hva som skal stå i tabellen // Oppgave A
 end
+
 
 # DTPD - distance-travelled-per-day = 40 km/t average
 # DPUOF - distance-per-unit-of-fuel = 8kWh
 # EPUOF - energy-per-unit-of-fuel = 10kWh
 
-DPUOF = 8
 DTPD = 40
+DPUOF = 8
 EPUOF = 10
+
 
 # Utregningen for gjennomsnitt av energiforbruk per dag
 fun bilenergi():
@@ -40,15 +42,14 @@ where:
 energi-to-number("48") is 48
 end 
 
-# Gjør om verdiene fra string til nummere
+# Gjør om verdiene fra string til numre // Oppgave C
 energiNum = transform-column(kWh-wealthy-consumer-data, "energi", energi-to-number)
 
 energiNum
 
-# Summerer energiforbruket til en vanlig innbygger
+# Summerer energiforbruket til en vanlig innbygger // Oppgave D
 summen = sum(energiNum, "energi")
-
-# Funksjon som regner ut og printer ut det gjennomsnittelige forbruket til en vanlig innbygger
+# Funksjon som regner ut og printer ut det gjennomsnittelige forbruket til en vanlig innbygger // Oppgave D
 fun gjennomsnitt():
   block:
   average = summen + bilenergi()
@@ -59,5 +60,5 @@ end
 
 gjennomsnitt()
 
-# Printer ut en graf over energiforbruket
+# Printer ut en graf over energiforbruket // Oppgave E
 bar-chart(energiNum, "komponent", "energi")
