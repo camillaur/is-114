@@ -1,23 +1,25 @@
 include color
 
 fun drawflag(land):
-fun flagnor(): 
-    allignment = rectangle(90, 160, "solid", "transparent") 
-    allignment2 = rectangle(100, 160, "solid", "transparent")   
-    main = rectangle(220, 160, "solid", color(186, 12, 47, 1))    
-    whitey = rectangle(40, 160, "solid", color(255, 255, 255, 1))   
-    whitex = rectangle(220, 40, "solid", color(255, 255, 255, 1))    
-    bluey = rectangle(20, 160, "solid", color(0, 32, 91, 1))   
-    bluex = rectangle(220, 20, "solid", color(0, 32, 91, 1))    
+  fun flagnor(): #Norges flagg
+    allignment = rectangle(90, 160, "solid", "transparent") #Definerer det gjennomsiktige rektanglet på y-aksen
+    allignment2 = rectangle(100, 160, "solid", "transparent") #Definerer det gjennomsiktige rektanglet på x-aksen
+    main = rectangle(220, 160, "solid", color(186, 12, 47, 1)) #Definerer det røde rektanglet
+    whitey = rectangle(40, 160, "solid", color(255, 255, 255, 1)) #Definerer det hvite rektanglet på y-aksen
+    whitex = rectangle(220, 40, "solid", color(255, 255, 255, 1)) #Definerer det hvite rektaglet på x-aksen 
+    bluey = rectangle(20, 160, "solid", color(0, 32, 91, 1)) #Definerer det blå rektaglet på y-aksen
+    bluex = rectangle(220, 20, "solid", color(0, 32, 91, 1)) #Definerer det blå rektanglet på x-aksen
   
-    flagprog = overlay-align("right", "middle", allignment, bluey)   
-    flagprog1 = overlay-align("left", "middle", bluex, flagprog)  
-    flagprog2 = overlay-align("pinhole", "middle", flagprog1, whitex) 
-    flagprog3 = overlay-align("right", "middle", allignment2, whitey)  
-    flagprog4 = overlay-align("left", "middle", flagprog2, flagprog3)  
-    overlay-align("pinhole", "middle", flagprog4, main)    
+    flagprog = overlay-align("right", "middle", allignment, bluey) #Plasserer det blå y-rektanglet over det gjennomsiktige y-rektanglet
+    flagprog1 = overlay-align("left", "middle", bluex, flagprog) #Plasserer det blå x-rektanglet over "flagprog"
+    flagprog2 = overlay-align("pinhole", "middle", flagprog1, whitex) #Plasserer "flagprog1" over det hvite x-rektaglet rektanglet
+    flagprog3 = overlay-align("right", "middle", allignment2, whitey) #Plasserer det gjennomsiktige x- rektanglet over det hvite y rektanglet 
+    flagprog4 = overlay-align("left", "middle", flagprog2, flagprog3) #Plasserer "flagprog2" over "flagprog 3"
+    overlay-align("pinhole", "middle", flagprog4, main) #Plasserer "flagprog4" over det røde rektanglet 
+    
+    #Og slik fortsetter det på samme måte med alle de nordiske flaggene 
 end  
-fun flagis(): 
+  fun flagis(): #Islands flagg
     allignment = rectangle(90, 160, "solid", "transparent")   
     allignment2 = rectangle(100, 160, "solid", "transparent")   
     main = rectangle(220, 160, "solid", color(2, 82, 156, 1))    
@@ -33,7 +35,7 @@ fun flagis():
     flagprog4 = overlay-align("left", "middle", flagprog2, flagprog3)  
     overlay-align("pinhole", "middle", flagprog4, main)    
 end  
-fun flagfin():  
+  fun flagfin(): #Finlands flagg
     allignment = rectangle(90, 160, "solid", "transparent")   
     allignment2 = rectangle(100, 160, "solid", "transparent")   
     main = rectangle(220, 160, "solid", color(255, 255, 255, 1))   
@@ -49,7 +51,7 @@ fun flagfin():
     flagprog4 = overlay-align("left", "middle", flagprog2, flagprog3)  
     overlay-align("pinhole", "middle", flagprog4, main)    
 end
-fun flagsve():  
+  fun flagsve(): #Sveriges flagg
     allignment = rectangle(100, 160, "solid", "transparent")   
     allignment2 = rectangle(110, 160, "solid", "transparent")   
     main = rectangle(220, 160, "solid", color(0, 106, 167, 1))   
@@ -65,7 +67,7 @@ fun flagsve():
     flagprog4 = overlay-align("left", "middle", flagprog2, flagprog3)  
     overlay-align("pinhole", "middle", flagprog4, main)   
 end
-fun flagdan():  
+  fun flagdan(): #Danmarks flagg 
     allignment = rectangle(100, 160, "solid", "transparent")   
     allignment2 = rectangle(110, 160, "solid", "transparent")   
     main = rectangle(220, 160, "solid", color(200, 16, 46, 1))   
@@ -81,7 +83,7 @@ fun flagdan():
     flagprog4 = overlay-align("left", "middle", flagprog2, flagprog3)  
     overlay-align("pinhole", "middle", flagprog4, main)    
 end
-  fun flagfer():  
+  fun flagfer(): #Færøyenes flagg
     allignment = rectangle(90, 160, "solid", "transparent")   
     allignment2 = rectangle(100, 160, "solid", "transparent")   
     main = rectangle(220, 160, "solid", color(255, 255, 255, 1))   
